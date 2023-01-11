@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { carService } from "../services/CarService";
-import { CarsTable } from "../components/CarsTable.component";
+import { CarsList } from "../components/CarsList.component";
 
 export const CarsPage = () => {
   const [cars, setCars] = useState([]);
@@ -14,5 +14,5 @@ export const CarsPage = () => {
     handleGetCars();
   }, []);
 
-  return <CarsTable data={cars} />;
+  return <CarsList data={cars} />;
 };
