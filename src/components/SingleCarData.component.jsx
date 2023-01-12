@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const SingleCarData = ({ data }) => {
   return (
     <div>
@@ -8,6 +10,9 @@ export const SingleCarData = ({ data }) => {
       <p>Automatic: {data.is_automatic ? "Yes" : "No"}</p>
       <p>Engine: {data.engine}</p>
       <p>Doors: {data.number_of_doors}</p>
+      <p>
+        <Link to="/cars">Return Back</Link>
+      </p>
     </div>
   );
 };

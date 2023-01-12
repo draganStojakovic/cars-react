@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import { CarsPage } from "./pages/CarsPage";
 import { SingleCarPage } from "./pages/SingleCarPage";
+import { AddCarPage } from "./pages/AddCarPage";
 
 const Router = () => {
   return (
@@ -11,6 +12,9 @@ const Router = () => {
       </Route>
       <Route exact path="/cars/:id">
         <SingleCarPage />
+      </Route>
+      <Route exact path="/submit/cars">
+        <AddCarPage />
       </Route>
     </Switch>
   );

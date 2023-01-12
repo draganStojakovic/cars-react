@@ -7,6 +7,9 @@ class CarService extends ApiService {
   async getSingleCar(id) {
     return await this.client.get(`/cars/${id}`);
   }
+  async add(car) {
+    await this.client.post("/cars", car);
+  }
 }
 
 export const carService = new CarService();

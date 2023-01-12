@@ -8,6 +8,9 @@ export const Navbar = () => {
         <li>
           <Link to="/cars">Cars</Link>
         </li>
+        <li>
+          <Link to="/submit/cars">Submit</Link>
+        </li>
       </ul>
       <hr />
     </nav>
