@@ -16,9 +16,20 @@ export const CarsPage = () => {
     history.push(`/edit/${id}`);
   };
 
+  const deleteCar = async (id) => {
+    await carService.delete(Number(id));
+    setCars(cars.filter((car) => id !== car.id));
+  };
+
   useEffect(() => {
     handleGetCars();
   }, []);
 
-  return <CarsList data={cars} handleRedirect={redirect} />;
+  return (
+    <CarsList
+      data={cars}
+      handleRedirect={redirect}
+      handleDeleteCars={deleteCar}
+    />
+  );
 };

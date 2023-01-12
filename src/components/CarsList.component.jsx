@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const CarsList = ({ data, handleRedirect }) => {
+export const CarsList = ({ data, handleRedirect, handleDeleteCars }) => {
   return (
     <div>
       <h1>Cars</h1>
@@ -18,6 +18,7 @@ export const CarsList = ({ data, handleRedirect }) => {
               <p>Engine: {car.engine}</p>
               <p>Doors: {car.number_of_doors}</p>
               <button onClick={() => handleRedirect(car.id)}>Edit</button>
+              <button onClick={() => handleDeleteCars(car.id)}>Delete</button>
             </li>
           ))}
       </ul>

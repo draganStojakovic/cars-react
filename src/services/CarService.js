@@ -13,6 +13,9 @@ class CarService extends ApiService {
   async edit(id, car) {
     await this.client.put(`/cars/${id}`, car);
   }
+  async delete(id) {
+    await this.client.delete(`/cars/${id}`);
+  }
 }
 
 export const carService = new CarService();
