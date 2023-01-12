@@ -16,8 +16,11 @@ class CarService extends ApiService {
   async delete(id) {
     await this.client.delete(`/cars/${id}`);
   }
-  // async search(search) {
-  //   return await this.client.get()
+  // async pagination(page, perPage) {
+  //   return await this.client.get(`/cars/?page=${page}&per_page=${perPage}`);
+  // }
+  // async search(term) {
+  //   return await this.client.get(`/posts?filter={"include":{"brand":"term"}}`);
   // }
 }
 
