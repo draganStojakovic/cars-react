@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 export const CarsPage = () => {
   const [cars, setCars] = useState([]);
+  const [search, setSearch] = useState("");
   const history = useHistory();
 
   const handleGetCars = async () => {
@@ -21,6 +22,10 @@ export const CarsPage = () => {
     setCars(cars.filter((car) => id !== car.id));
   };
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   useEffect(() => {
     handleGetCars();
   }, []);
@@ -30,6 +35,8 @@ export const CarsPage = () => {
       data={cars}
       handleRedirect={redirect}
       handleDeleteCars={deleteCar}
+      search={search}
+      onSearch={handleChange}
     />
   );
 };
