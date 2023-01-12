@@ -35,6 +35,7 @@ export const AddCarPage = () => {
   return (
     <CarForm
       car={car}
+      isCreateMode={true}
       onChange={setCar}
       handleCar={handleAddCar}
       selectbox={formFunction.generateSelectBox}

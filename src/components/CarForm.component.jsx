@@ -4,11 +4,12 @@ export const CarForm = ({
   handleCar,
   selectbox,
   handlePreviewForm,
+  isCreateMode,
 }) => {
   return (
     <>
       <form onSubmit={handleCar}>
-        <h1>Add a Car</h1>
+        <h1>{isCreateMode ? "Add Car" : "Edit Car"}</h1>
         <label htmlFor="brand">Brand:</label>
         <input
           id="brand"
@@ -58,7 +59,7 @@ export const CarForm = ({
           id="is_automatic"
           type="checkbox"
           value={car.is_automatic}
-          checked={car.is_automatic === true}
+          checked={car.is_automatic}
           onChange={() => onChange({ ...car, is_automatic: !car.is_automatic })}
         ></input>
         <br />
@@ -112,7 +113,7 @@ export const CarForm = ({
         ></input>
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">{isCreateMode ? "Add Car" : "Edit Car"}</button>
       </form>
       <button
         onClick={() =>

@@ -2,6 +2,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { CarsPage } from "./pages/CarsPage";
 import { SingleCarPage } from "./pages/SingleCarPage";
 import { AddCarPage } from "./pages/AddCarPage";
+import { EditCarPage } from "./pages/EditCarPage";
 
 const Router = () => {
   return (
@@ -15,6 +16,9 @@ const Router = () => {
       </Route>
       <Route exact path="/submit/cars">
         <AddCarPage />
+      </Route>
+      <Route exact path="/edit/:id">
+        <EditCarPage />
       </Route>
     </Switch>
   );

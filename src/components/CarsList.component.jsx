@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const CarsList = ({ data }) => {
+export const CarsList = ({ data, handleRedirect }) => {
   return (
     <div>
       <h1>Cars</h1>
@@ -17,6 +17,7 @@ export const CarsList = ({ data }) => {
               <p>Automatic: {car.is_automatic ? "Yes" : "No"}</p>
               <p>Engine: {car.engine}</p>
               <p>Doors: {car.number_of_doors}</p>
+              <button onClick={() => handleRedirect(car.id)}>Edit</button>
             </li>
           ))}
       </ul>
